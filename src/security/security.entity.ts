@@ -5,7 +5,7 @@ export class Security {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   seccode: string;
 
   @Column()

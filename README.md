@@ -17,7 +17,3 @@ node dist/src/test-client/client.js
 ### Notes
 - New entities are created when the server starts.  
 - The database is cleared every day at 00:00.  
-
-
-// todo
-unique security Name and isin
