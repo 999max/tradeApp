@@ -28,6 +28,11 @@ export class CleanService {
   }
 
   async sampleData() {
+    const existingSecurity = await this.securityService.findAllLimited(1);
+    if (existingSecurity.length > 0) {
+      return;
+    }
+
     const codes = ['AAPL', 'YNDX', 'UGMK', 'SNP500'];
     const securities: Security[] = [];
     for (const code of codes) {
