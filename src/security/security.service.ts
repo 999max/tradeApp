@@ -19,7 +19,7 @@ export class SecurityService {
     return this.securityRepository.findOneBy({ id });
   }
 
-  async create(security: Security): Promise<Security> {
+  async create(security: Omit<Security, 'id'>): Promise<Security> {
     return await this.securityRepository.save(security);
   }
 

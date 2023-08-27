@@ -17,7 +17,9 @@ export class SecurityController {
   }
 
   @Post()
-  async createSecurity(@Body() security: Security): Promise<Security> {
+  async createSecurity(
+    @Body() security: Omit<Security, 'id'>,
+  ): Promise<Security> {
     return this.securityService.create(security);
   }
 }
