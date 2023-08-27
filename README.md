@@ -1,4 +1,4 @@
-## Got to run on local machine
+## How to run on local machine
 1. Create *.env* file with db credentials (see *.envExample*).
 2. Run docker with db. Use same creds from *.env* file:  
 ```sh
