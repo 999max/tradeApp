@@ -4,7 +4,7 @@ import { TradeModule } from 'src/trade/trade.module';
 import { SecurityModule } from 'src/security/security.module';
 
 @Module({
-  imports: [forwardRef(() => SecurityModule), forwardRef(() => TradeModule)],
+  imports: [SecurityModule, TradeModule],
   providers: [CleanService],
 })
 export class DbWorkerModule {}
