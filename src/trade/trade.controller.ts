@@ -1,4 +1,14 @@
-import { Controller, Get, Param, Post, Body, Res, Req } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Body,
+  Res,
+  Req,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { Response, Request } from 'express';
 import { TradeService } from './trade.service';
 import { Trade } from './trade.entity';
@@ -36,6 +46,7 @@ export class TradeController {
     return this.tradeService.findById(id);
   }
 
+  @UsePipes(new ValidationPipe())
   @Post()
   async create(@Body() trade: CreateTradeDto): Promise<Trade> {
     return this.tradeService.create(trade);
