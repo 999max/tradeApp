@@ -17,7 +17,7 @@ export class CleanService {
     this.sampleData();
   }
 
-  async cleanup() {
+  async cleanup(): Promise<void> {
     try {
       await this.securityService.removeAll();
       await this.tradeService.removeAll();
@@ -27,7 +27,7 @@ export class CleanService {
     }
   }
 
-  async sampleData() {
+  async sampleData(): Promise<void> {
     const existingSecurity = await this.securityService.findAllLimited(1);
     if (existingSecurity.length > 0) {
       return;
